@@ -1,0 +1,17 @@
+{% extends 'post/base.html' %}
+{% block title %}
+<title>Home</title>
+{% endblock %}
+
+
+
+{% block body %}
+<div class="container">
+    {% for post in object_list %}
+    <h1>{{ post.title }} </h1>
+    <p>{{ post.desc }}</p>
+    <a href="{% url 'ImageApp:detail' post.id%}" class="btn btn-primary">View Detail</a>
+    <hr>
+    {% endfor %}
+</div>
+{% endblock %}
